@@ -1,0 +1,43 @@
+# Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
+# or more contributor license agreements. See the NOTICE file distributed with
+# this work for additional information regarding copyright
+# ownership. Elasticsearch B.V. licenses this file to you under
+# the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+# http://www.apache.org/licenses/LICENSE-2.0
+ 
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+#################################################################
+# 정의 파일의 핵심
+# 1. ChatGPT 프롬포트 내용을 가져와 ES cluster에 Query로 전달힌디.
+# 2. 'PLUGIN_HOSTNAME' 과 같은 일부 자리 표시자가 Python 코드 에서 대체된다.
+#################################################################
+
+openapi: 3.0.1
+info:
+  title: SOMMA_ElasticGPT_Plugin
+  description: |
+    Retrieve information from the most recent Elastic documentation.
+    가장 최근의 Elastic 공식 문서 에서 정보를 검색 하시오.
+  version: 'v1'
+servers:
+  - url: PLUGIN_HOSTNAME
+paths:
+ /search:
+    get:
+      operationId: search
+      summary: >
+        retrieves the document matching the query 
+        (쿼리와 일치 하는 문서를 검색 합니다.)
+      responses:
+        "200":
+          description: OK
